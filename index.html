@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>  
+	<meta charset="utf-8"> 
+	<title>Icon Selector - FamFamFam Silk </title> 
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]--> 
+ 
+	<link rel="stylesheet" href="icons.css"> 
+	
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="icon_data.js"></script> <!-- defines 'var icon_data = [...]' -->
+    <script type="text/javascript" src="icons.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Icon Selector</h1>
+        <h2>From the <a href="http://www.famfamfam.com/lab/icons/silk/">FamFamFam Silk</a> icon set</h2>
+        
+        <form>
+            <label for="search">Filter</label>
+            <input type="search" id="search" placeholder="Filter icons">
+        </form>
+    </header>
+    
+    <ol class="icons">
+
+    </ol>
+    
+    <div><img id="preview" src=""></div>
+    
+    <footer>
+        Created by <a href="http://twitter.com/dsingleton">@dsingleton</a>. Fork this on <a href="http://github.com/dsingleton/icon-selector">Github</a>
+    </footer>
+</body>
+</html>

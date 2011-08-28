@@ -1,50 +1,31 @@
 
 $(document).ready(function() {
-	
-	// Add Form
-	$('div.primary').after(
-		'<div class="secondary"> \
-		    <form action="" class="filter" autocomplete="off"> \
-			    <h2><label for="search">Filter</label></h2> \
-			    <input type="text" class="text" name="search" id="search" /> \
-		    </form> \
-		</div>'
-	);
-	
-	// Add preview 
-	$('div.secondary').after(
-		'<div class="tertiary preview"> \
-			<h2>Preview</h2> \
-			<img id="preview" alt="Hover on icon " /> \
-		</div>'
-	);
-	$('.preview').hide().fadeIn(1500);
-	
 
-	$('.filter').hide().fadeIn(1500);
-	
+    // #1 Build icon list
+    var list = $('ol.icons'),
+        path = '';
+    $.each(icon_data, function(i, icon) {
+        path = 'icons/' + icon
+        list.append('<li><a title="' + icon.replace('_', ' ') + '"href="' + path + '"><img src="' + path + '"></a></li>');
+    });
+
 	// All the icons, we'll be using this a lot
 	var icons = $('ol.icons li a');
 	
-	// Add hover  previews (doesn't work on filtered out icons)
-	icons.hover(function() {
-
-		if ($(this).css('opacity') > .5) {
-			$('img#preview').attr('src', this.href);
-		}
-		return false;
-		
-	}, function() {
-		// Remove hover afterwards 
-		if ($(this).css('opacity') > .5) {
-			$('img#preview').removeAttr('src');
-		}
-	});
+    // Add hover  previews (doesn't work on filtered out icons)
+    icons.hover(function() {
+            $(this).css('opacity') > .5 &&  $('#preview').attr('src', this.href);
+        },
+        function() {
+            $('#preview').attr('src', '#');
+        }
+    );
 	
-	// Filtering search (with delay)
+	// #2 Filtering search (with delay)
 	var search_timer = false;
+
 	$('#search').keyup(function() {
-		
+
 		// Clear timed events if we've have another key press
 		if (search_timer) {
 			window.clearTimeout(search_timer);

@@ -1,79 +1,79 @@
-
-/** Filter */
-.filter {
+body {
+    margin: 0 auto;
+    padding: 0 2em 1em;
+    
+    color: #6b6b6b;
+    background: #fff;
+    
+    font: 14px/21px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+    max-width: 1270px
 }
 
-.filter h2 {
+header h1 {
+    color: #1b1b1b;
 }
 
-.filter input {
-	position: relative;
-	top: -4px;
-	width: 8em;
+header h2 {
+    margin-top: -10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: normal;
+    font-size: 1em;
 }
 
-/** Preview */
-.preview {
-
+header form {
+    float: right;
+    margin: -3.5em 1em 0 0;
 }
 
-.preview h2 {
-    margin-left: 60px;
+footer {
+    clear: both;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
 }
-.preview #preview {
-	height: 64px;
-	float: left;
-	width: 64px;
-	padding: 4px;
-	border: 1px solid #ddd;
-	text-align: center;
-	vertical-align: bottom;
-	color: #ccc;
+
+
+#preview {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -32px;
+    border: 1px solid #ccc;
+    width: 64px;
+    height: 64px;
+}
+
+a {
+    color: dodgerblue;
+}
+
+ol.icons {
+	margin: 0 0 .6em 0;
+	padding: 0;
 	
-	position: relative;
-	left: 180px;
-	top: -30px;
+	float: left;
 }
 
-/** Icons */
-
-div#iconSelector {
+ol.icons li {
+    margin: 0;
+    padding: 0;
     float: left;
-    width: 100%;
-    padding: 0 0 40px 0;
-}
-
-ol {
-	margin: 1em 0 2em;
-	padding: 20px 0 4em;
-}
-
-ol li {
+    
 	list-style: none;	
 	display: inline;
-	float: left;
-	margin: 0;
 }
 
-ol li a {
+ol.icons li a {
     display: block;
     float: left;
-    padding: 2px;
+    padding: 5px;
 }
 
-ol li a:hover {
-    background: none;
-}
-
-ol li img {
-	border: 1px solid #eee;
-	padding: 2px;
-	width: 16px;
-	height: 16px;
+ol.icons li img {
 	float: left;
 }
 
-ol li a:hover img {
-     border: 1px solid #0063DC;
-     background: #eee;   
+ol.icons li a:hover {
+     background: #ddd;   
 }
