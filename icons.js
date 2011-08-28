@@ -17,7 +17,7 @@ $(document).ready(function() {
             $(this).css('opacity') > .5 &&  $('#preview').attr('src', this.href);
         },
         function() {
-            $('#preview').attr('src', '#');
+            // $('#preview').attr('src', '#');
         }
     );
 	
@@ -42,4 +42,31 @@ $(document).ready(function() {
 		}, 300);
 		return false;
 	});
+	
+	var preview = $('#preview');
+    $('ol.icons a').hover(
+        function(event) {
+            var elem = $(event.target);
+            
+            if (elem.css('opacity') < .5) {
+                return;
+            }
+            
+            //get the position of the placeholder element
+            var pos = elem.offset();  
+            var previewWidth = preview.width();
+            var offset = (previewWidth + 2)  / 4;
+            
+            
+            //show the menu directly over the placeholder
+            preview.css({
+                'left': pos.left - offset + "px",
+                'top': pos.top - offset + "px"
+            });
+            
+            preview.show()
+        },
+        function(event) {
+        }
+    );
 });

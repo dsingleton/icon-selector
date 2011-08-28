@@ -36,12 +36,15 @@ footer {
 
 #preview {
     position: absolute;
-    top: 5px;
-    left: 50%;
+    top: -500px;
+    left: -500px;
     margin-left: -32px;
-    border: 1px solid #ccc;
+    border: 1px solid #666;
+    padding: 2px;
     width: 64px;
     height: 64px;
+    background: #fff;
+    box-shadow: 0 0 15px #222;
 }
 
 a {
