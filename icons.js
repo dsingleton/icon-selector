@@ -1,72 +1,49 @@
-
 $(document).ready(function() {
-
-    // #1 Build icon list
-    var list = $('ol.icons'),
-        path = '';
+    
+    var icon_list = $('ol.icons');
+    var preview = $('#preview');
+    
+    // #1 Generate icon links
     $.each(icon_data, function(i, icon) {
-        path = 'icons/' + icon
-        list.append('<li><a title="' + icon.replace('_', ' ') + '"href="' + path + '"><img src="' + path + '"></a></li>');
+        icon_list.append('<li><a title="' + icon.replace('_', ' ') + '"href="icons/' + icon + '"> \
+                          <img src="icons/' + icon + '"></a></li>');
     });
-
-	// All the icons, we'll be using this a lot
-	var icons = $('ol.icons li a');
+    
+	var icon_links = $('ol.icons li a');
 	
-    // Add hover  previews (doesn't work on filtered out icons)
-    icons.hover(function() {
-            $(this).css('opacity') > .5 &&  $('#preview').attr('src', this.href);
-        },
-        function() {
-            // $('#preview').attr('src', '#');
+    // #3 Hover preview
+    icon_links.mouseenter(function(event) {
+        var elem = $(event.target).parent();
+        if (elem.css('opacity') > .5) {  
+            preview.offset({
+                'left': elem.offset().left - 24,
+                'top': elem.offset().top - 24
+            }).html(elem.clone()).show();
         }
-    );
-	
-	// #2 Filtering search (with delay)
+    });
+    
+    icon_list.mouseleave(function() {
+       preview.hide(); 
+    });
+    
+    // #2 Filtering search 
 	var search_timer = false;
 
 	$('#search').keyup(function() {
 
 		// Clear timed events if we've have another key press
-		if (search_timer) {
-			window.clearTimeout(search_timer);
-		}
+		window.clearTimeout(search_timer);
 
 		var filter = this.value;
 		search_timer = window.setTimeout(function () {
 			// If we match the filter word anywhere then full opacity, 
 			// otherwise greyed out
-			icons.each(function() {
+			icon_links.each(function() {
 				var opacity = (this.title.indexOf(filter) >= 0) ? 1 : 0.1;
 				$(this).css('opacity', opacity);
 			});
-		}, 300);
-		return false;
+			preview.hide();
+		}, 250);
 	});
-	
-	var preview = $('#preview');
-    $('ol.icons a').hover(
-        function(event) {
-            var elem = $(event.target);
-            
-            if (elem.css('opacity') < .5) {
-                return;
-            }
-            
-            //get the position of the placeholder element
-            var pos = elem.offset();  
-            var previewWidth = preview.width();
-            var offset = (previewWidth + 2)  / 4;
-            
-            
-            //show the menu directly over the placeholder
-            preview.css({
-                'left': pos.left - offset + "px",
-                'top': pos.top - offset + "px"
-            });
-            
-            preview.show()
-        },
-        function(event) {
-        }
-    );
+    
 });

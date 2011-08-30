@@ -24,7 +24,11 @@ header h2 {
 
 header form {
     float: right;
-    margin: -3.5em 1em 0 0;
+    margin: -3.3em 1em 0 0;
+}
+
+header form input {
+    width: 150px;
 }
 
 footer {
@@ -39,12 +43,15 @@ footer {
     top: -500px;
     left: -500px;
     margin-left: -32px;
+    box-shadow: 0 0 15px #333;
+}
+
+#preview img {
     border: 1px solid #666;
-    padding: 2px;
+    padding: 3px;
     width: 64px;
     height: 64px;
     background: #fff;
-    box-shadow: 0 0 15px #222;
 }
 
 a {
@@ -70,10 +77,10 @@ ol.icons li {
 ol.icons li a {
     display: block;
     float: left;
-    padding: 5px;
 }
 
 ol.icons li img {
+    padding: 5px;
 	float: left;
 }
 
