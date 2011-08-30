@@ -1,13 +1,13 @@
 body {
     margin: 0 auto;
-    padding: 0 2em 1em;
+    padding: 0 40px 1em;
     
     color: #6b6b6b;
     background: #fff;
     
     font: 14px/21px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
     
-    max-width: 1270px
+    max-width: 1250px
 }
 
 header h1 {
