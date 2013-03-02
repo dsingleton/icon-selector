@@ -27,23 +27,19 @@ $(document).ready(function() {
     });
     
     // #2 Filtering search 
-	var search_timer = false;
-
 	$('#search').keyup(function() {
 
 		// Clear timed events if we've have another key press
-		window.clearTimeout(search_timer);
 
 		var filter = this.value;
-		search_timer = window.setTimeout(function () {
-			// If we match the filter word anywhere then full opacity, 
-			// otherwise greyed out
-			icon_links.each(function() {
-				var opacity = (this.title.indexOf(filter) >= 0) ? 1 : 0.1;
-				$(this).css('opacity', opacity);
-			});
-			preview.hide();
-		}, 250);
+		// If we match the filter word anywhere then full opacity, 
+		// otherwise greyed out
+		icon_links.each(function() {
+			var opacity = (this.title.indexOf(filter) >= 0) ? 1 : 0.1;
+			$(this).css('opacity', opacity);
+		});
+		// reset the preview, we may have filtered it out
+		preview.hide();
 	});
     
 });

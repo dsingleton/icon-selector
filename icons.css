@@ -77,6 +77,8 @@ ol.icons li {
 ol.icons li a {
     display: block;
     float: left;
+    -webkit-transition: opacity ease-in .75s;
+    -moz-transition: opacity ease-in .75s;
 }
 
 ol.icons li img {

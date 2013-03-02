@@ -1,1 +1,15 @@
-An easy way to find the kind of icon you need from the amazing FamFamFam Silk icon set: http://www.famfamfam.com/lab/icons/silk/
+h1. Icon Selector 
+
+"Silk":http://www.famfamfam.com/lab/icons/silk/ is an iconset by "FamFamFam":http://www.famfamfam.com/. It's my default choice for prototyping, new projects and quick tools. Containing 1,000 icons means there's nearly an always a icon that suites my needs, but finding it can be tricky due the sheer choice.
+
+I built this tool to make it easer
+I use the "Silk":http://www.famfamfam.com/lab/icons/silk/ The Silk set by FamFamFam is my go to An easy way to find the kind of icon you need from the amazing FamFamFam Silk icon set: http://www.famfamfam.com/lab/icons/silk/
+
+h2. Generate.py
+
+Creates a javascript data file containing an array of icons, based on the contents of icons/
+
+h2. Todo
+
+* Keyboard nav/shortcut for search
+* Clearer licencing notes for FamFamFam
