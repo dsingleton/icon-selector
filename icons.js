@@ -28,18 +28,16 @@ $(document).ready(function() {
     
     // #2 Filtering search 
 	$('#search').keyup(function() {
-
-		// Clear timed events if we've have another key press
-
-		var filter = this.value;
-		// If we match the filter word anywhere then full opacity, 
-		// otherwise greyed out
-		icon_links.each(function() {
-			var opacity = (this.title.indexOf(filter) >= 0) ? 1 : 0.1;
-			$(this).css('opacity', opacity);
-		});
-		// reset the preview, we may have filtered it out
+		apply_filter(this.value);
 		preview.hide();
 	});
-    
+
+    var apply_filter = function(value) {
+        window.location.hash = value;
+        icon_links.each(function() {
+            var opacity = (this.title.indexOf(value) >= 0) ? 1 : 0.1;
+            $(this).css('opacity', opacity);
+        });
+    };
+    apply_filter(window.location.hash.substring(1));
 });
