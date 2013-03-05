@@ -11,10 +11,10 @@ $(document).ready(function() {
     
 	var icon_links = $('ol.icons li a');
 	
-    // #3 Hover preview
+    
     icon_links.mouseenter(function(event) {
         var elem = $(event.target).parent();
-        if (elem.css('opacity') > .5) {  
+        if (elem.hasClass('no-match')) {  
             preview.offset({
                 'left': elem.offset().left - 24,
                 'top': elem.offset().top - 24
@@ -26,7 +26,7 @@ $(document).ready(function() {
        preview.hide(); 
     });
     
-    // #2 Filtering search 
+    
 	$('#search').keyup(function() {
 		apply_filter(this.value);
 		preview.hide();
@@ -35,8 +35,7 @@ $(document).ready(function() {
     var apply_filter = function(value) {
         window.location.hash = value;
         icon_links.each(function() {
-            var opacity = (this.title.indexOf(value) >= 0) ? 1 : 0.1;
-            $(this).css('opacity', opacity);
+            $(this).toggleClass('no-match', (this.title.indexOf(value) == -1));
         });
     };
     apply_filter(window.location.hash.substring(1));
