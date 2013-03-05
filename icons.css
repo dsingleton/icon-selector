@@ -1,42 +1,64 @@
 body {
     margin: 0 auto;
-    padding: 0 40px 1em;
+    padding: 0;
     
     color: #6b6b6b;
     background: #fff;
     
-    font: 14px/21px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
-    
-    max-width: 1250px
+    font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    width: 98%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+}
+
+header .container {
+    text-align: center;
+    color: #666;
 }
 
 header h1 {
-    color: #1b1b1b;
-}
-
-header h2 {
-    margin-top: -10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    font-weight: normal;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    border-right: 1px solid #ddd;
+    padding: 0 10px 0 0;
     font-size: 1em;
 }
 
+header .intro p {
+    display: inline-block;
+    margin: 0;
+}
+
 header form {
-    float: right;
-    margin: -3.3em 1em 0 0;
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+header form label {
+    display: none;
 }
 
 header form input {
-    width: 150px;
+    width: 35em;
+
+    border: 1px solid #ccc;
+    border-radius: 2em;
+    box-shadow: 0 0 5px #ccc;
+    padding: 10px 20px;
+    font-size: 19px;
 }
 
-footer {
-    clear: both;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-}
-
+header form input:focus {
+    outline: none;
+}    
 
 #preview {
     position: absolute;
@@ -44,6 +66,8 @@ footer {
     left: -500px;
     margin-left: -32px;
     box-shadow: 0 0 15px #333;
+
+
 }
 
 #preview img {
@@ -59,7 +83,7 @@ a {
 }
 
 ol.icons {
-	margin: 0 0 .6em 0;
+	margin: 0;
 	padding: 0;
 	
 	float: left;

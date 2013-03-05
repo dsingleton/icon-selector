@@ -2,11 +2,7 @@
 <html lang="en">
 <head>  
 	<meta charset="utf-8"> 
-	<title>Icon Selector</title> 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]--> 
- 
+	<title>Icon Selector</title>  
 	<link rel="stylesheet" href="icons.css"> 
 
 	<link rel="shortcut icon" href="icons/zoom.png">
@@ -14,26 +10,48 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type="text/javascript" src="icon_data.js"></script> <!-- defines 'var icon_data = [...]' -->
     <script type="text/javascript" src="icons.js"></script>
+
+
+    <!-- TODO
+    * Scale up preview image
+    * Dock preview image to side, with more info
+    * async jquery
+    * big search
+    * Classes for match.not,
+    * no cursor for unmatched
+    * better contrast for matched items
+    * performance
+    * new read me
+    * gh-pages
+    * kill from website 
+     -->
+
+
 </head>
 <body>
     <header>
-        <h1>Icon Selector</h1>
-        <h2>For the <a href="http://www.famfamfam.com/lab/icons/silk/">Silk</a> icon set</h2>
-        
-        <form>
-            <label for="search">Search</label>
-            <input type="search" id="search" placeholder="e.g. add, flag, play">
-        </form>
+        <div class="container">
+
+            <div class="intro">
+                <h1>Icon Selector</h1>
+                <p>
+                    Search and browse the <a href="http://www.famfamfam.com/lab/icons/silk/">Silk</a> icon set.
+                    Code by <a href="http://dsingleton.co.uk">David Singleton</a>, fork on <a href="http://github.com/dsingleton/icon-selector">Github</a>
+                </p>
+            </div>
+
+            <form>
+                <label for="search">Search</label>
+                <input type="text" id="search" placeholder="Search for icons by keyword">
+            </form>
+        </div>
     </header>
     
-    <ol class="icons">
-        <li id="preview"></li>
-    </ol>
-    
-    
-    
-    <footer>
-        Icons by <a href="http://www.famfamfam.com/">Mark James</a>. Selector by <a href="http://twitter.com/dsingleton">@dsingleton</a>. Code on <a href="http://github.com/dsingleton/icon-selector">Github</a>
-    </footer>
+    <div id="content" class="container">
+        <ol class="icons">
+            <li id="preview"></li>
+        </ol>
+    </div>
+
 </body>
 </html>
