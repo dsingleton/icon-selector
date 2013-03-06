@@ -14,7 +14,7 @@ $(document).ready(function() {
     
     icon_links.mouseenter(function(event) {
         var elem = $(event.target).parent();
-        if (elem.hasClass('no-match')) {  
+        if (!elem.hasClass('no-match')) {  
             preview.offset({
                 'left': elem.offset().left - 24,
                 'top': elem.offset().top - 24
