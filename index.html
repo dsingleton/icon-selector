@@ -3,14 +3,8 @@
 <head>  
 	<meta charset="utf-8"> 
 	<title>Icon Selector</title>  
-	<link rel="stylesheet" href="icons.css"> 
-
+	<link rel="stylesheet" href="css/icons.css"> 
 	<link rel="shortcut icon" href="icons/zoom.png">
-	
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script type="text/javascript" src="icon_data.js"></script> <!-- defines 'var icon_data = [...]' -->
-    <script type="text/javascript" src="icons.js"></script>
-
 </head>
 <body>
     <header>
@@ -37,5 +31,10 @@
         </ol>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script> typeof jQuery === 'undefined' && document.write(unescape("%3Cscript src='{% static 'js/jquery.min.js' %}'  %3E%3C/script%3E")); </script>
+
+    <script src="js/icon_data.js"></script>
+    <script src="js/icons.js"></script>
 </body>
 </html>
