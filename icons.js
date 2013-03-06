@@ -1,7 +1,9 @@
 $(document).ready(function() {
     
-    var icon_list = $('ol.icons');
-    var preview = $('#preview');
+    var icon_list = $('ol.icons'),
+        preview = $('#preview'),
+        search_input = $('#search'),
+        initial_hash = window.location.hash.substring(1);
     
     // #1 Generate icon links
     $.each(icon_data, function(i, icon) {
@@ -27,7 +29,7 @@ $(document).ready(function() {
     });
     
     
-	$('#search').keyup(function() {
+	search_input.keyup(function() {
 		apply_filter(this.value);
 		preview.hide();
 	});
@@ -38,5 +40,7 @@ $(document).ready(function() {
             $(this).toggleClass('no-match', (this.title.indexOf(value) == -1));
         });
     };
-    apply_filter(window.location.hash.substring(1));
+    
+    apply_filter(initial_hash)
+    search_input.val(initial_hash);
 });
