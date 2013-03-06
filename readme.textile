@@ -6,6 +6,12 @@ Released under a CC-Attribution lience and with 1,000 icons (16x16 size) it's a 
 
 But with than many icons it can be a pain to find the one you want, so this tool helps you filter down by keyword.
 
+h2. Demo
+
+You can see a "demo running here":http://dsingleton.github.com/icon-selector
+
+It takes a little while to due to the 1000 individual icons being loaded, it's faster on a local file system.
+
 h2. Generate.py
 
 Creates a JSON data file of icons from the contents of icons/
