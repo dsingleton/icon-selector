@@ -121,3 +121,8 @@ ol.icons li img {
 ol.icons li a:hover {
      background: #ddd;   
 }
+
+ol.icons li a.no-match:hover {
+    background: none;
+    cursor: default;
+}
